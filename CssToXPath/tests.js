@@ -16,3 +16,5 @@ console.log("11: " + (cssToXPath("[class=testclass] button") === "//*[@class='te
 console.log("12: " + (cssToXPath("a") === "//a"));
 console.log("13: " + (cssToXPath("a div span button") === "//a//div//span//button"));
 console.log("14: " + (cssToXPath("div[type=text][checked=false] span[dt-args='t b p']") === "//div[@type='text' and @checked='false']//span[@dt-args='t b p']"));
+console.log("15: " + (cssToXPath(".open [data-toggle]") === "//*[contains(@class,'open')]//*[@data-toggle]"));
+console.log("16: " + (cssToXPath(".uui-profile-menu") === "//*[contains(@class,'uui-profile-menu')]"));

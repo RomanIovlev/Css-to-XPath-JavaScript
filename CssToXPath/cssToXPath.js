@@ -58,10 +58,10 @@
                             if (attribute.slice(-1) !== "'") attribute += "'";
                         } else if (css[i] !== "]") return `Can't process Css. Unexpected symbol №${i+1}(${css[i]}) in attributes`;
                         attributes.push(attribute);
+                        i++;
                         break;
                     default: return `Can't process Css. Unexpected symbol №${i}(${css[i-1]}) in attributes`;
                 }
-                i++;
             }
             if (result.slice(-1) === '/') result += "*";
             result += `[${attributes.join(" and ")}]`;
