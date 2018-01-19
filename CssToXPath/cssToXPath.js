@@ -27,37 +27,39 @@
             while (i < length && css[i] !== " ") {
                 switch (css[i]) {
                     case ".":
-                        i++; start = i+1;
+                        i++; start = i;
                         while (i < length && css[i].match(/[a-z0-9A-Z0-9:\-_\.]/)) i++;
-                        attributes.push(i === length
-                            ? convertToClass(css.substr(1))
-                            : convertToClass(css.substring(start, i)));
+                        attributes.push(convertToClass(i === length
+                            ? css.substr(1)
+                            : css.substring(start, i)));
                         break;                    
                     case "#":
                         i++; start = i;
                         while (i < length && css[i].match(/[a-z0-9A-Z0-9:\-_\.]/)) i++;
-                        attributes.push(i === length
-                            ? convertToId(css.substr(1))
-                            : convertToId(css.substring(start, i)));
+                        attributes.push(convertToId(i === length
+                            ? css.substr(1)
+                            : css.substring(start, i)));
                         break;
                     case "[":
                         i++;
                         let attribute = "@";
-                        while (i < length && css[i] !== '=') {
+                        while (i < length && !css[i].match(/[=\]]/)) {
                             attribute += css[i];
                             i++;
                         }
-                        attribute += "="; i++;
-                        if (css[i] !== "'") attribute += "'";
-                        while (i < length && css[i] !== ']') {
-                            attribute += css[i];
-                            i++;
-                        }
-                        if (i === length) return "Incorrect Css. No ']' symbol for '['";
-                        if (attribute.slice(-1) !== "'") attribute += "'";
+                        if (css[i] === "=") {
+                            attribute += "="; i++;
+                            if (css[i] !== "'") attribute += "'";
+                            while (i < length && css[i] !== ']') {
+                                attribute += css[i];
+                                i++;
+                            }
+                            if (i === length) return "Incorrect Css. No ']' symbol for '['";
+                            if (attribute.slice(-1) !== "'") attribute += "'";
+                        } else if (css[i] !== "]") return `Can't process Css. Unexpected symbol №${i+1}(${css[i]}) in attributes`;
                         attributes.push(attribute);
                         break;
-                    default: return `Can't process Css. Unexpected symbol ${css[i-1]} in attributes`;
+                    default: return `Can't process Css. Unexpected symbol №${i}(${css[i-1]}) in attributes`;
                 }
                 i++;
             }
