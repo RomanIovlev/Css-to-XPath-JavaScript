@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "CssToXPath", "CssToXPath\CssToXPath.njsproj", "{B2B73CD2-5A92-480E-8675-DBB3E12B65F2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B2B73CD2-5A92-480E-8675-DBB3E12B65F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B73CD2-5A92-480E-8675-DBB3E12B65F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2B73CD2-5A92-480E-8675-DBB3E12B65F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B73CD2-5A92-480E-8675-DBB3E12B65F2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

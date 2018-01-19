@@ -1,0 +1,9 @@
+{
+  "name": "css-to-xpath",
+  "version": "0.0.0",
+  "description": "CssToXPath",
+  "main": "app.js",
+  "author": {
+    "name": "Roman_Iovlev"
+  }
+}
