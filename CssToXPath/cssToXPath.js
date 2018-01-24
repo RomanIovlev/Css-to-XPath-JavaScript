@@ -30,14 +30,14 @@
                         i++; start = i;
                         while (i < length && css[i].match(/[a-z0-9A-Z0-9:\-_\.]/)) i++;
                         attributes.push(convertToClass(i === length
-                            ? css.substr(1)
+                            ? css.substr(start)
                             : css.substring(start, i)));
                         break;                    
                     case "#":
                         i++; start = i;
                         while (i < length && css[i].match(/[a-z0-9A-Z0-9:\-_\.]/)) i++;
                         attributes.push(convertToId(i === length
-                            ? css.substr(1)
+                            ? css.substr(start)
                             : css.substring(start, i)));
                         break;
                     case "[":
